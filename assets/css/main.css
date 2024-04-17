@@ -4917,6 +4917,8 @@ a img {
     display: flex;
     justify-content: center;
     text-align: center
+    flex-wrap: wrap;
+    margin: 5px;
 }
 
 .down,
