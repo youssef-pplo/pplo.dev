@@ -155,7 +155,29 @@
     <footer class="footer">
       <p>&copy; Youssef (pplo.dev), 2017-2024</p>
     </footer>
-
+    <script>
+    // Function to generate a random dark color
+    function getRandomDarkColor() {
+        // Generate random values for RGB in the lower range
+        var r = Math.floor(Math.random() * 128); // Range: 0-127
+        var g = Math.floor(Math.random() * 128); // Range: 0-127
+        var b = Math.floor(Math.random() * 128); // Range: 0-127
+        // Construct a CSS color string
+        return "rgb(" + r + ", " + g + ", " + b + ")";
+    }
+    
+    // Apply random dark colors to the background gradient
+    function applyRandomDarkGradient() {
+        var color1 = getRandomDarkColor();
+        var color2 = getRandomDarkColor();
+        var gradientCSS = "linear-gradient(to right, " + color1 + ", " + color2 + ")";
+        document.getElementById("particles-js").style.background = gradientCSS;
+    }
+    
+    // Call the function to apply random dark colors when the page loads
+    applyRandomDarkGradient();
+  
+    </script>
     <!-- Import JS: Particles Theme -->
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <!-- Import JS: Sweet Scroll -->
