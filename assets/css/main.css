@@ -4916,7 +4916,7 @@ a img {
 .header-icons {
     display: flex;
     justify-content: center;
-    text-align: center
+    text-align: center;
     flex-wrap: wrap;
     margin: 5px;
 }
