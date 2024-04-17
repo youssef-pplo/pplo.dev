@@ -43,8 +43,9 @@
       <div class="header">
         <h1>
           <span class="site-title">Youssef (pplo.dev)</span>
-          <span class="site-description">Programmer • Developer • Ai Engineer<br><br>
-          Just PPLO</span>
+          <span class="site-description" id="textOutput">Programmer • Developer • Ai Engineer</span>
+          <br><br>
+           <span class="site-description" > Just PPLO </span>
         </h1>
         <div class="header-icons">
                 <a aria-label="Send Email" href="mailto:youssefdev74@gmail.com" target="_blank"
@@ -102,6 +103,7 @@
       <!-- User Specifics -->
       <div class="user">
         <!-- Technology Stack #1: Languages -->
+        <hr>
         <div class="tech">
           <h2>Languages</h2>
           <i class="devicon-python-plain colored"></i>
@@ -112,7 +114,7 @@
           <p>My favorite languages for systems programming, software engineering, and data analysis.</p>
         </div>
                 <!-- Technology Stack #2: AI -->
-
+<hr>
         <div class="tech">
           <h2>AI</h2>
           <i class="devicon-opencv-plain-wordmark colored"></i>
@@ -123,7 +125,7 @@
 
           <p>My preferred technologies for Artificial Intelligence.</p>
         </div>
-   
+   <hr>
         <!-- Technology Stack #3: Back-End -->
         <div class="tech">
           <h2>Back-End</h2>
@@ -136,7 +138,7 @@
           <i class="devicon-postgresql-plain-wordmark colored"></i>
           <p>My preferred technologies for back-end web programming and database architecture.</p>
         </div>
-
+<hr>
         <!-- Technology Stack #4: Tools -->
         <div class="tech">
           <h2>Tools</h2>
@@ -148,6 +150,7 @@
           <p>My favorite tools for version control, code editing, and container orchestration.</p>
         </div>
       </div>
+      <hr>
     </section>
 
  
@@ -176,7 +179,40 @@
     
     // Call the function to apply random dark colors when the page loads
     applyRandomDarkGradient();
-  
+
+
+          // Array containing the text options
+    var textOptions = [
+      "Programmer", "Developer", "AI Engineer",
+      "Designer", "Creative", "Problem Solver"
+      // Add more options here if needed
+    ];
+
+    // Function to get random unique elements from an array
+    function getRandomUniqueElements(array, numElements) {
+      var shuffled = array.slice(0),
+          i = array.length,
+          min = i - numElements,
+          temp, index;
+      while (i-- > min) {
+          index = Math.floor((i + 1) * Math.random());
+          temp = shuffled[index];
+          shuffled[index] = shuffled[i];
+          shuffled[i] = temp;
+      }
+      return shuffled.slice(min);
+    }
+
+    // Function to display the randomly selected text
+    function displayRandomText() {
+      var randomTexts = getRandomUniqueElements(textOptions, 3) ;
+      var textOutput = document.getElementById('textOutput');
+      textOutput.innerHTML = randomTexts.join(' • ');
+    }
+
+    // Call the function initially to display random text
+    displayRandomText();
+      
     </script>
     <!-- Import JS: Particles Theme -->
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
