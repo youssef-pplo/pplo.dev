@@ -16,7 +16,19 @@ body {
     color: #282424;
     font-family: 'Nunito Sans', sans-serif
 }
+h1 {
+  transition: all 0.9s ease;
+}
+h1:hover {
+  transform: translate3d(0, -10px, 22px);
+  color: #ff0266;
+}
 
+
+::selection {
+    background-color: #00000000 !important;
+    color: #0009 !important;
+}
 article,
 aside,
 details,
