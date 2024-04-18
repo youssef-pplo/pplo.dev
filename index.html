@@ -41,11 +41,12 @@
     background-color: #338fff00 !important;
     color: #5d5d5d !important;}
     body{
-      
+    animation: rotate-effect 15s infinite;
+
     background: rgb(15,83,84);
-    background: -moz-linear-gradient(0deg, rgba(15,83,84,1) 50%, rgba(32,26,139,1) 100%);
-    background: -webkit-linear-gradient(0deg, rgba(15,83,84,1) 50%, rgba(32,26,139,1) 100%);
-    background: linear-gradient(0deg, rgba(15,83,84,1) 50%, rgba(32,26,139,1) 100%);
+    background: -moz-linear-gradient(var(--angle, 0deg), rgba(15,83,84,1) 50%, rgba(32,26,139,1) 100%);
+    background: -webkit-linear-gradient(var(--angle, 0deg), rgba(15,83,84,1) 50%, rgba(32,26,139,1) 100%);
+    background: linear-gradient(var(--angle, 0deg), rgba(15,83,84,1) 50%, rgba(32,26,139,1) 100%);
     color: white;}
     h1 , h2 , h3 , a  {
       color: white;

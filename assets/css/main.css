@@ -16,6 +16,16 @@ body {
     color: #282424;
     font-family: 'Nunito Sans', sans-serif
 }
+@property --angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+  }
+@keyframes rotate-effect {
+    to {
+      --angle: 360deg;
+    }
+  }
 h1 {
   transition: all 0.9s ease;
 }
