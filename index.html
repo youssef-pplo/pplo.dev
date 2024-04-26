@@ -130,8 +130,8 @@
         <div class="tech">
           <h2>Hobbies & Facts</h2>
         <b>
-          <p>As for hobbies, I am an avid reader and coder, and I enjoy psychoanalysis and creative expression. My heart beats for Real Madrid, and while I may not be the most talented footballer, my loyalty to the club is unwavering. Chess is another passion of mine, and offers a strategic challenge that appeals to me. I draw inspiration from my role model <a href="https://www.pplo.dev">Youssef PPLO</a> . Looking ahead, I am determined to pursue higher education in artificial intelligence, with dreams of attending a respected AI college.</p>
-          <p>Current Best song : <a href="https://www.youtube.com/watch?v=sToOyqB_hF0">A'ool Eh - Lege-cy</a></p>
+          <p>As for hobbies, I am an avid reader and coder, and I enjoy psychoanalysis and creative expression. My heart beats for Real Madrid, and while I may not be the most talented footballer, my loyalty to the club is unwavering. Chess is another passion of mine, and offers a strategic challenge that appeals to me. I draw inspiration from my role model <a href="https://pplo.dev">Youssef PPLO</a> . huge hater to Amr diab .  Looking ahead, I am determined to pursue higher education in artificial intelligence, with dreams of attending a respected AI college.</p>
+          <p id="currentBestSong"> Current Best song : <a href="https://www.youtube.com/watch?v=sToOyqB_hF0">A'ool Eh - Lege-cy</a></p>
         </b></div>
       </div>
 
@@ -375,8 +375,16 @@
 
 
     <hr style="height:3px;border-width:0;color:gray;background-color:black">
-
-    <footer class="footer">
+    <iframe
+    title="Spotify Embed: Recommendation Playlist"
+    src="https://open.spotify.com/embed/playlist/6k1NnxqnFpoHulWt7L7tWY?utm_source=generator&theme=0"
+    width="100%"
+    height="100%"
+    style="min-height: 360px;"
+    frameborder="0"
+    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+    loading="lazy"
+  ></iframe>    <footer class="footer">
       <p>&copy; Youssef (pplo.dev), 2017-2024</p>
     </footer>
     <script>
@@ -397,7 +405,66 @@
         var gradientCSS = "linear-gradient(to right, " + color1 + ", " + color2 + ")";
         document.getElementById("particles-js").style.background = gradientCSS;
     }
-    
+    // script.js
+
+const token = 'BQCOVdoD-3XnWIV4Xk9U6RLe_woOnkAZ_8w1-j-M26MUBO_TxTQoxp1iWziRNBV9ewWkKm6sdv0TKlvM53-xDxCZqUzRbvF6TF5BdtZG3IoVO40G3WaTjcplt0etEmGLlOT5R86iqMZ1UMcP4eU-8q3QVClkVUbMj8GPZ6EeZlwJ9R4JOuKvtfIPOA5hACELxX767Odby_6eNlmCTu3bbycJxg9Cm45oVUcZc8-IwcDGbJopUATHvsn_lPkWhrFMJ_0wZpsYn9BnUFteRPJe5P8V';
+
+async function fetchWebApi(endpoint, method, body) {
+  const res = await fetch(`https://api.spotify.com/${endpoint}`, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+    method,
+    body: JSON.stringify(body)
+  });
+  return await res.json();
+}
+
+async function getBestFirstSong() {
+    const response = await fetchWebApi('v1/me/top/tracks?time_range=long_term&limit=1', 'GET');
+    const bestSong = response.items && response.items.length > 0 ? response.items[0] : null;
+    return bestSong;
+}
+
+async function displayBestFirstSong() {
+    const bestFirstSong = await getBestFirstSong();
+    const currentBestSongContainer = document.getElementById('currentBestSong');
+
+    if (!bestFirstSong) {
+        currentBestSongContainer.innerHTML = '<p>No best song found.</p>';
+        return;
+    }
+
+    // Create the paragraph element for the current best song
+    const paragraphElement = document.createElement('p');
+    paragraphElement.textContent = "Current Best Song: ";
+
+    // Create the link element for the song
+    const songLinkElement = document.createElement('a');
+    songLinkElement.href = bestFirstSong.external_urls.spotify;
+    songLinkElement.textContent = `${bestFirstSong.name} - ${bestFirstSong.artists.map(artist => artist.name).join(', ')}`;
+    songLinkElement.target = "_blank"; // Open link in a new tab
+
+    // Append the link element to the paragraph element
+    paragraphElement.appendChild(songLinkElement);
+
+    // Append the paragraph element to the current best song container
+    currentBestSongContainer.innerHTML = ''; // Clear previous content
+    currentBestSongContainer.appendChild(paragraphElement);
+
+    // Add an image for the song
+    const imageElement = document.createElement('img');
+    imageElement.src = bestFirstSong.album.images[0].url; // Assuming the first image is 64x64
+    imageElement.alt = bestFirstSong.name;
+    imageElement.width = 128;
+
+
+    // Append the image element to the current best song container
+    currentBestSongContainer.appendChild(imageElement);
+}
+
+displayBestFirstSong();
+
     // Call the function to apply random dark colors when the page loads
     applyRandomDarkGradient();
     </script>
