@@ -53,6 +53,12 @@
     width: inherit;
     overflow: visible;
 }
+span.h3 {
+    display: block;
+    font-weight: bold;
+    font-size: 25px;
+    padding: 20px;
+}
     </style>
   </head>
 
@@ -207,7 +213,7 @@
       <div class="user-projects">
 
         <div style="text-align: center">
-          <h3>PPLO GPT</h3>
+          <span class="h3">PPLO GPT</span>
           <div>
             <img
               height="32"
@@ -236,7 +242,7 @@
       <div class="user-projects">
         
         <div style="text-align: center">
-          <h3>Personal Portfolio</h3>
+          <span class="h3">Personal Portfolio</span>
           <img
             alt="#"
             height="32"
@@ -268,9 +274,9 @@
       <div class="user-projects">
         
         <div style="text-align: center">
-          <h3>Random Quote AI</h3>
+          <span class="h3">Random Quote AI</span>
           <img
-          alt="#""
+          alt="#"
             height="32"
             width="32"
             src="https://unpkg.com/simple-icons@3.4.0/icons/openaigym.svg"
@@ -300,7 +306,7 @@
       <div class="user-projects">
         
         <div style="text-align: center">
-          <h3>AI Tic Tac Toe</h3>
+          <span class="h3">AI Tic Tac Toe</span>
           <img
           alt="#"
 
@@ -330,7 +336,7 @@
       <div class="user-projects">
         
         <div style="text-align: center">
-          <h3>Music player</h3>
+          <span class="h3">Music player</span>
           <img
             height="32"
             width="32"
@@ -359,7 +365,7 @@
       <div class="user-projects">
         
         <div style="text-align: center">
-          <h3>AI snake Game</h3>
+          <span class="h3">AI snake Game</span>
           <img
             height="32"
             width="32"
@@ -408,66 +414,6 @@
         var gradientCSS = "linear-gradient(to right, " + color1 + ", " + color2 + ")";
         document.getElementById("particles-js").style.background = gradientCSS;
     }
-    // script.js
-
-const token = 'AQByuwqsHtbI6PlGRTIGqPEzlRNnMAxsz45jCUJksE-PdEI6NzPgEGHTvt4f_bVE0zJ0ZflWobyNUC8X0cI-ZbtLQTg-XvYrzLgcxrXehP-_i22SIQtbM8Z7kJqjIAPA2Kg';
-
-async function fetchWebApi(endpoint, method, body) {
-  const res = await fetch(`https://api.spotify.com/${endpoint}`, {
-    headers: {
-      Authorization: `Bearer ${token}`,
-    },
-    method,
-    body: JSON.stringify(body)
-  });
-  return await res.json();
-}
-
-async function getBestFirstSong() {
-    const response = await fetchWebApi('v1/me/top/tracks?time_range=long_term&limit=1', 'GET');
-    const bestSong = response.items && response.items.length > 0 ? response.items[0] : null;
-    return bestSong;
-}
-
-async function displayBestFirstSong() {
-    const bestFirstSong = await getBestFirstSong();
-    const currentBestSongContainer = document.getElementById('currentBestSong');
-
-    if (!bestFirstSong) {
-        currentBestSongContainer.innerHTML = '<p>No best song found.</p>';
-        return;
-    }
-
-    // Create the paragraph element for the current best song
-    const paragraphElement = document.createElement('p');
-    paragraphElement.textContent = "Current Best Song: ";
-
-    // Create the link element for the song
-    const songLinkElement = document.createElement('a');
-    songLinkElement.href = bestFirstSong.external_urls.spotify;
-    songLinkElement.textContent = `${bestFirstSong.name} - ${bestFirstSong.artists.map(artist => artist.name).join(', ')}`;
-    songLinkElement.target = "_blank"; // Open link in a new tab
-
-    // Append the link element to the paragraph element
-    paragraphElement.appendChild(songLinkElement);
-
-    // Append the paragraph element to the current best song container
-    currentBestSongContainer.innerHTML = ''; // Clear previous content
-    currentBestSongContainer.appendChild(paragraphElement);
-
-    // Add an image for the song
-    const imageElement = document.createElement('img');
-    imageElement.src = bestFirstSong.album.images[0].url; // Assuming the first image is 64x64
-    imageElement.alt = bestFirstSong.name;
-    imageElement.width = 128;
-
-
-    // Append the image element to the current best song container
-    currentBestSongContainer.appendChild(imageElement);
-}
-
-displayBestFirstSong();
-
     // Call the function to apply random dark colors when the page loads
     applyRandomDarkGradient();
     </script>
