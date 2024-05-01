@@ -204,7 +204,22 @@ span.h3 {
 
 
       <div itemscope itemtype="https://schema.org/SoftwareApplication">
-
+        <span itemprop="name"></span>
+        <!-- Add other properties as needed -->
+        <div itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+          <meta itemprop="price" content="Price of your software">
+          <meta itemprop="priceCurrency" content="Currency code (e.g., USD)">
+          <!-- Add other offer properties if available -->
+        </div>
+        <div itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
+          <meta itemprop="ratingValue" content="Overall rating">
+          <meta itemprop="ratingCount" content="Number of ratings">
+          <!-- Add other aggregate rating properties if available -->
+        </div>
+        <meta itemprop="applicationCategory" content="Category of your software">
+        <meta itemprop="operatingSystem" content="Operating system(s) supported by your software">
+      </div>
+      
 
      <!-- Projects Section -->
      <section id="projects">
