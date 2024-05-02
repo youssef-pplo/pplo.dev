@@ -1,0 +1,16 @@
+{
+  "name": "Youssef (pplo.dev)",
+  "short_name": "pplo.dev",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "purple",
+  "theme_color": "purple",
+  "icons": [
+    {
+      "src": "./assets/img/webp/Professional-Picture-Me.webp",
+      "sizes": "512x512",
+      "type": "image/webp"
+    }
+  ]
+}
+
