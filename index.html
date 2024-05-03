@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <meta http-equiv="Cache-Control" content="public, max-age=604800">
     <meta charset="utf-8" />
     <meta property="og:type" content="website" />
-    <meta http-equiv="Cache-Control" content="public, max-age=604800">
     <meta http-equiv="Content-Encoding" content="gzip, deflate, br">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Youssef (pplo.dev)" />
     <meta property="og:title" content="Youssef (pplo.dev) Personal pplo.dev Website" />
     <meta property="og:url" content="https://pplo.dev/" />
     <meta property="og:description" content="Youssef's personal website showcases his story, skills, and thoughts. Explore his journey in software development and technology." />
     <meta property="og:locale" content="ar_EG" />
     <meta property="og:image" content="https://raw.githubusercontent.com/Youssef-dv/pplo.dev/main/assets/img/jpg/dd.jpg" />
     <meta property="og:site_name" content="pplo.dev" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="author" content="Youssef (pplo.dev)" />
     <meta name="title" content="Youssef (pplo.dev) Personal pplo.dev Website">
     <meta name="description" content="Youssef's personal website showcases his story, skills, and thoughts. Explore his journey in software development and technology.">
     <meta name="keywords" content="pplo dev, Youssef (pplo.dev), pplo.dev,Youssef Elsaid, Youssef dev, Youssef (pplo.dev) Egypt, Youssef (pplo.dev) Alexandria,Youssef (pplo.dev), Youssef (pplo.dev) Website, pploisdev , Youssef , pplo, pplo youssef , 01091734838 , +201091734838 , 01068669202 , +201068669202 , youssefdev74@gmail.com , youssef@pplo.dev ,best dev, pplo.dev portfolio ,pplo portfolio, Youssef portfolio , يوسف السيد , يوسف ببلو , ببلو , ببلو ديف , يوسف , pplo , Youssef elsaid abdo , Youssef dev , pplo-dev , Youssef pplo , youssef dv , alcoders , Youssefdev74 , Lege cy Lover , best amr diab hater , pplo gpt , pplogpt, best dev in egypt ,Youssef elsayed , Youssef el said , Youssef Elsaied , Youssef said , Youssef Elsayd">
@@ -23,10 +23,10 @@
     <meta name="twitter:card" content="portfolio" />
     <meta name="twitter:title" content="Youssef's personal website showcases his story, skills, and thoughts. Explore his journey in software development and technology." />
     <meta name="twitter:image" content="https://raw.githubusercontent.com/Youssef-dv/pplo.dev/main/assets/img/jpg/dd.jpg" />
-    <title>Youssef (pplo.dev) personal pplo.dev Website</title>
     <link rel="alternate" href="https://pplo.dev" hreflang="en" />
     <link rel="alternate" href="https://pplo.dev" hreflang="ar" />
     <link rel="shortcut icon" href="./assets/img/favicon.ico" />
+    <title>Youssef (pplo.dev) personal pplo.dev Website</title>
     <link rel="stylesheet" href="./assets/css/main.css">
     <link rel="stylesheet" type='text/css' href="./assets/css/fonts.css" media="print" onload="this.media='all'" />
 
@@ -35,10 +35,9 @@
     <div id="particles-js">
       <div class="header">
         <h1>
-          <div class="site-title">Youssef (pplo.dev)</div>
-          <h1>
-           <div class="site-description" id="textOutput">Programmer • Developer • Ai Engineer</div>
-          </h1><br>
+          <span class="site-title">Youssef (pplo.dev)</span>
+          <span class="site-description" id="textOutput">Programmer • Developer • Ai Engineer</span>
+          <br>
         </h1>
         <span class="site-description"> Just PPLO <i class="fa fa-linux" aria-hidden="true"></i>
         </span>
@@ -81,7 +80,7 @@
       <div class="user-details">
         <h1>My Story</h1>
         <picture>
-          <source type="image/webp" srcset="./assets/img/webp/Professional-Picture-Me.webp" alt="Professional Me" width="20%" height="20%" style="max-width: 100%; height: auto; border-radius: 50%;" />
+          <source type="image/webp" srcset="./assets/img/webp/Professional-Picture-Me.webp" alt="Professional Me" width="20%" style="max-width: 100%; height: auto; border-radius: 50%;" />
           <img loading="lazy" src="https://pplo.dev/assets/img/webp/Professional-Picture-Me_resized.webp" alt="Professional Me" width="200" height="200" style="border-radius: 50%; max-width: 200px;">
          
         </picture>
@@ -220,7 +219,21 @@
       <p>&copy; Youssef (pplo.dev), 2017-2024 - <a href=”tel:+201091734838">01091734838</a>
       </p>
     </footer>
-
+    <script>
+      function getRandomDarkColor() {
+        var r = Math.floor(Math.random() * 129); 
+        var g = Math.floor(Math.random() * 129); 
+        var b = Math.floor(Math.random() * 129); 
+        return "rgb(" + r + ", " + g + ", " + b + ")";
+      }
+      function applyRandomDarkGradient() {
+        var color1 = getRandomDarkColor();
+        var color2 = getRandomDarkColor();
+        var gradientCSS = "linear-gradient(to right, " + color1 + ", " + color2 + ")";
+        document.getElementById("particles-js").style.background = gradientCSS;
+      }
+      applyRandomDarkGradient();
+    </script>
     <script defer src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script defer src="./assets/js/sweet-scroll.min.js"></script>
     <script defer src="./assets/js/main.js"></script>
