@@ -7,12 +7,11 @@ body {
     font-weight: normal;
     font-style: normal;
     font-display: swap;
-    animation: rotate-effect 15s infinite;
-    background: #0f5354;
-    background: -moz-linear-gradient(var(--angle,0deg),rgb(15 83 84) 50%,rgb(32 26 139) 100%);
-    background: -webkit-linear-gradient(var(--angle,0deg),rgb(15 83 84) 50%,rgb(32 26 139) 100%);
-    background: linear-gradient(var(--angle,0deg),rgb(15 83 84) 50%,rgb(32 26 139) 100%);
-    color: #fff
+    /* Gradient background */
+    background: linear-gradient(to bottom, #141414, #282c34);
+    color: #fff;
+    font-family: 'Monaco',sans-serif;
+    text-align: center; /* Centered all text */
 }
 h1,h2,a {
     color: #fff
@@ -26,7 +25,10 @@ hr {
     box-sizing: content-box;
     height: 0;
     width: inherit;
-    overflow: visible
+    overflow: visible;
+    /* Added a subtle border to the horizontal rule */
+    border-top: 1px solid #444;
+    margin: 30px 0; /* Increased margin for better spacing */
 }
 
 span.h3 {
@@ -43,7 +45,9 @@ hr {
 
 #about,#projects {
     width: 90%;
-    max-width: 960px
+    max-width: 960px;
+    /* Added padding to the sections */
+    padding: 20px; 
 }
 
 .down,.footer,.header,.header-icons,.header-icons .icon,.project-link,.user,.user-details {
@@ -63,7 +67,6 @@ body {
     font-size: 100%;
     line-height: 1.5;
     color: #ffffff;
-    font-family: 'Monaco',sans-serif
 }
 
 @property --angle {
@@ -72,11 +75,7 @@ body {
     inherits: false
 }
 
-@keyframes rotate-effect {
-    to {
-        --angle: 360deg
-    }
-}
+/* Removed animation */
 
 h1 {
     transition: .9s;
@@ -522,10 +521,10 @@ p {
     transition: color .3s ease-in,background-color .3s ease-in,border-color .3s ease-in
 }
 
+/* Edited Footer */
 .footer {
-    background: #1488cc;
-    background: -webkit-linear-gradient(to right,#2b32b2,#1488cc);
-    background: linear-gradient(to right,#2b32b2,#1488cc);
+    /* Darker gradient background */
+    background: linear-gradient(to bottom, #282c34, #141414); 
     padding: 10px 0;
     margin-top: 100px;
     color: #fff
@@ -535,4 +534,44 @@ p {
     text-decoration: none;
     margin: 0;
     color: #fff
+}
+
+/* Edited About Section */
+#about {
+    padding: 50px 0; /* Added padding to the about section */
+}
+
+#about h1 {
+    font-size: 3rem; /* Increased font size of the heading */
+}
+
+#about .user-details {
+    text-align: center; /* Centered the user details */
+}
+
+#about .user-details picture {
+    margin-bottom: 20px; /* Added margin below the picture */
+}
+
+#about .user-details p {
+    font-size: 1.2rem; /* Increased font size of the paragraph */
+    line-height: 1.6; /* Adjusted line height for better readability */
+}
+
+#about .user hr {
+    margin: 30px 0; /* Added margin to the horizontal rule */
+}
+
+#about .user .tech {
+    text-align: center; /* Centered tech sections */
+    padding: 20px; /* Added padding for better spacing */
+}
+
+#about .user .tech i {
+    margin-right: 10px; /* Added margin to the right of icons */
+}
+
+#about .user .tech p {
+    font-size: 1rem; /* Decreased font size of the tech descriptions */
+    margin-top: 10px; /* Added margin to the top of tech descriptions */
 }
