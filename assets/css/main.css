@@ -185,6 +185,12 @@ img {
     content: "\f095"
 }
 
+
+.fa-github:before{
+    content: "\f09b"
+}
+
+
 .fa-envelope:before {
     content: "\f0e0"
 }
