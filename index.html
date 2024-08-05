@@ -334,7 +334,21 @@
     <p>&copy; Youssef (pplo.dev), 2017-2024 - <a href=”tel:+201091734838">01091734838</a>
     </p>
   </footer>
-
+<script>
+      function getRandomDarkColor() {
+        var r = Math.floor(Math.random() * 129); 
+        var g = Math.floor(Math.random() * 129); 
+        var b = Math.floor(Math.random() * 129); 
+        return "rgb(" + r + ", " + g + ", " + b + ")";
+      }
+      function applyRandomDarkGradient() {
+        var color1 = getRandomDarkColor();
+        var color2 = getRandomDarkColor();
+        var gradientCSS = "linear-gradient(to right, " + color1 + ", " + color2 + ")";
+        document.getElementById("particles-js").style.background = gradientCSS;
+      }
+      applyRandomDarkGradient();
+    </script>
   <script defer src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
   <script defer src="./assets/js/sweet-scroll.min.js"></script>
   <script defer src="./assets/js/main.js"></script>
