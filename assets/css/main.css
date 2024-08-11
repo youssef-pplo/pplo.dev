@@ -480,12 +480,12 @@ p {
 
 @media only screen and (min-width: 550px) {
     .header .site-title {
-        margin:0;
+        margin:-10px;
         font-size: 100px
     }
 
     .header .site-description {
-        font-size: 40px
+        font-size: 30px
     }
 
     .header-links .link {
