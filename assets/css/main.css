@@ -349,6 +349,7 @@ p {
 }
 
 .header {
+    zoom: 90%;
     z-index: 1;
     color: #fff;
     font-family: Monaco,sans-serif;
