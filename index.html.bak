@@ -103,8 +103,231 @@
 </head>
 
 <body>
-  <div id="root"></div>
-  <script type="module" src="/src/main.tsx"></script>
+  <div class="custom-cursor"></div>
+  <canvas id="bg-canvas"></canvas>
+
+  <!-- Theme Toggle -->
+  <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path
+        d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+    </svg>
+  </button>
+
+  <!-- Back to Top -->
+  <button class="back-to-top" id="back-to-top" aria-label="Back to top">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path d="M12 4l-8 8h5v8h6v-8h5z" />
+    </svg>
+  </button>
+
+  <nav class="glass-nav">
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#tech">Arsenal</a>
+      <a href="#projects">Work</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <main id="app">
+    <section id="hero" class="full-screen">
+      <div class="hero-content">
+        <span class="hero-label">Available for hire</span>
+        <h1 id="hero-title">Youssef Elsaid</h1>
+        <p class="subtitle">Youssef Elsaid — Software Engineer & AI Architect.</p>
+        <a href="#projects" class="primary-btn">View Work</a>
+      </div>
+    </section>
+
+    <section id="about" class="content-section">
+      <div class="bento-card profile-section">
+        <img src="/assets/img/jpg/pplo.png" alt="Youssef Elsaid" class="profile-pic">
+        <div>
+          <h2>About Me</h2>
+          <p class="about-text">
+            I'm Youssef Elsaid, a passionate software engineer and AI architect from Alexandria, Egypt.
+            My journey in technology began at age 8, and over the past decade, I've mastered over 30 programming
+            languages including Python, JavaScript, C++, and more.
+          </p>
+          <p class="about-text">
+            I specialize in building intelligent systems that solve real-world problems. From developing AI-powered
+            educational platforms to creating scalable web applications, I combine cutting-edge technology with
+            practical solutions. My expertise spans artificial intelligence, machine learning, full-stack development,
+            and cloud architecture.
+          </p>
+          <p class="about-text">
+            When I'm not coding, you'll find me diving into psychoanalysis, playing chess, or supporting Real Madrid.
+            I'm currently pursuing higher education with a focus on AI and aspiring to contribute to groundbreaking
+            innovations in the field of artificial intelligence.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="tech" class="content-section">
+      <h2>Arsenal</h2>
+      <div class="bento-grid">
+        <div class="bento-card">
+          <h3>Languages</h3>
+          <div class="tech-tags">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">JavaScript</span>
+            <span class="tech-tag">TypeScript</span>
+            <span class="tech-tag">PHP</span>
+            <span class="tech-tag">C++</span>
+            <span class="tech-tag">Lua</span>
+            <span class="tech-tag">Dart</span>
+            <span class="tech-tag">Java</span>
+            <span class="tech-tag">Go</span>
+            <span class="tech-tag">Rust</span>
+            <span class="tech-tag">SQL</span>
+            <span class="tech-tag">Bash</span>
+          </div>
+        </div>
+        <div class="bento-card">
+          <h3>AI / ML</h3>
+          <div class="tech-tags">
+            <span class="tech-tag">TensorFlow</span>
+            <span class="tech-tag">PyTorch</span>
+            <span class="tech-tag">OpenCV</span>
+            <span class="tech-tag">NumPy</span>
+            <span class="tech-tag">Pandas</span>
+            <span class="tech-tag">Scikit-learn</span>
+            <span class="tech-tag">Keras</span>
+            <span class="tech-tag">Hugging Face</span>
+            <span class="tech-tag">LangChain</span>
+            <span class="tech-tag">YOLO</span>
+          </div>
+        </div>
+        <div class="bento-card">
+          <h3>Full Stack</h3>
+          <div class="tech-tags">
+            <span class="tech-tag">Django</span>
+            <span class="tech-tag">Flask</span>
+            <span class="tech-tag">FastAPI</span>
+            <span class="tech-tag">Express</span>
+            <span class="tech-tag">Node.js</span>
+            <span class="tech-tag">React</span>
+            <span class="tech-tag">Next.js</span>
+            <span class="tech-tag">Vue</span>
+            <span class="tech-tag">Tailwind</span>
+            <span class="tech-tag">Three.js</span>
+          </div>
+        </div>
+        <div class="bento-card">
+          <h3>DevOps & Tools</h3>
+          <div class="tech-tags">
+            <span class="tech-tag">Git</span>
+            <span class="tech-tag">Docker</span>
+            <span class="tech-tag">Kubernetes</span>
+            <span class="tech-tag">Linux</span>
+            <span class="tech-tag">AWS</span>
+            <span class="tech-tag">Google Cloud</span>
+            <span class="tech-tag">Vercel</span>
+            <span class="tech-tag">PostgreSQL</span>
+            <span class="tech-tag">MongoDB</span>
+            <span class="tech-tag">Redis</span>
+            <span class="tech-tag">Figma</span>
+          </div>
+        </div>
+        <div class="bento-card">
+          <h3>Mobile & Desktop</h3>
+          <div class="tech-tags">
+            <span class="tech-tag">Flutter</span>
+            <span class="tech-tag">React Native</span>
+            <span class="tech-tag">Electron</span>
+            <span class="tech-tag">Android SDK</span>
+            <span class="tech-tag">iOS</span>
+            <span class="tech-tag">Xamarin</span>
+          </div>
+        </div>
+        <div class="bento-card">
+          <h3>Design & Content</h3>
+          <div class="tech-tags">
+            <span class="tech-tag">Photoshop</span>
+            <span class="tech-tag">Illustrator</span>
+            <span class="tech-tag">After Effects</span>
+            <span class="tech-tag">Blender</span>
+            <span class="tech-tag">GSAP</span>
+            <span class="tech-tag">WebGL</span>
+          </div>
+        </div>
+        <div class="bento-card">
+          <h3>Problem Solving</h3>
+          <div class="tech-tags">
+            <span class="tech-tag">Algorithms</span>
+            <span class="tech-tag">Data Structures</span>
+            <span class="tech-tag">System Design</span>
+            <span class="tech-tag">Code Review</span>
+            <span class="tech-tag">Debugging</span>
+            <span class="tech-tag">Optimization</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="content-section">
+      <h2>Selected Work</h2>
+      <div class="bento-grid">
+        <div class="bento-card">
+          <div>
+            <h3 class="project-title">I3RBLY</h3>
+            <p class="project-desc">AI system for Arabic grammatical analysis. 4 years of R&D.</p>
+          </div>
+          <a href="https://i3rbly.com" target="_blank" class="project-link">Visit Site →</a>
+        </div>
+        <div class="bento-card">
+          <div>
+            <h3 class="project-title">Steam1st Store</h3>
+            <p class="project-desc">Gaming top-up store with Flask backend and PostgreSQL.</p>
+          </div>
+          <a href="https://steam1st.store" target="_blank" class="project-link">Visit Site →</a>
+        </div>
+        <div class="bento-card">
+          <div>
+            <h3 class="project-title">AlCoders</h3>
+            <p class="project-desc">Developer community and coding platform.</p>
+          </div>
+          <a href="https://alcoders.com" target="_blank" class="project-link">Visit Site →</a>
+        </div>
+        <div class="bento-card">
+          <div>
+            <h3 class="project-title">EasyBio - Dr. Abdelrahman</h3>
+            <p class="project-desc">Educational platform for biology students in Egyptian secondary schools.</p>
+          </div>
+          <a href="https://easybio-drabdelrahman.com" target="_blank" class="project-link">Visit Site →</a>
+        </div>
+        <div class="bento-card">
+          <div>
+            <h3 class="project-title">PPLO GPT</h3>
+            <p class="project-desc">AI ChatBot using Python and ML to assist users.</p>
+          </div>
+          <a href="https://pplo.vercel.app" target="_blank" class="project-link">Visit Site →</a>
+        </div>
+        <div class="bento-card">
+          <div>
+            <h3 class="project-title">Kotobee</h3>
+            <p class="project-desc">Backend development for e-learning platform.</p>
+          </div>
+          <a href="https://kotobee.com" target="_blank" class="project-link">Visit Site →</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="content-section">
+      <footer class="footer">
+        <div class="contact-links">
+          <a href="mailto:youssefdev74@gmail.com" class="contact-item">Email</a>
+          <a href="https://github.com/youssef-pplo" target="_blank" class="contact-item">GitHub</a>
+          <a href="https://instagram.com/pplo.dev" target="_blank" class="contact-item">Instagram</a>
+          <a href="https://wa.me/+201091734838" target="_blank" class="contact-item">WhatsApp</a>
+        </div>
+        <p>&copy; 2016 - 2026 | Youssef Elsaid.</p>
+      </footer>
+    </section>
+  </main>
+  <script type="module" src="/main.js"></script>
 </body>
 
 </html>
