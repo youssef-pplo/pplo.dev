@@ -2,7 +2,8 @@ import { gsap } from 'gsap';
 
 export function initHeroTitleAnimation() {
     const heroTitle = document.getElementById('hero-title');
-    if (!heroTitle) return;
+    if (!heroTitle) return () => {};
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return () => {};
 
     const titles = [
         'Youssef Elsaid',
@@ -10,113 +11,69 @@ export function initHeroTitleAnimation() {
         'pplo.dev',
         'Youssef dev'
     ];
-
+    const glitchChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*';
     let currentIndex = 0;
+    let intervalId;
+    let startDelayId;
+    let activeTimeline;
     let isAnimating = false;
 
-    // Glitch characters for the scramble effect
-    const glitchChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*';
+    heroTitle.textContent = titles[0];
 
-    // Find the longest common prefix
-    const findCommonPrefix = (str1, str2) => {
-        let i = 0;
-        while (i < str1.length && i < str2.length && str1[i] === str2[i]) {
-            i++;
-        }
-        return i;
-    };
-
-    // Smart glitchy morphing - only glitch the parts that change
-    const morphText = async (fromText, toText) => {
+    const animateTitle = () => {
         if (isAnimating) return;
         isAnimating = true;
 
-        const commonPrefixLength = findCommonPrefix(fromText, toText);
-        const stablePart = fromText.substring(0, commonPrefixLength);
-        const fromChanging = fromText.substring(commonPrefixLength);
-        const toChanging = toText.substring(commonPrefixLength);
+        currentIndex = (currentIndex + 1) % titles.length;
+        const nextTitle = titles[currentIndex];
+        const length = nextTitle.length;
 
-        // Subtle shake
-        gsap.to(heroTitle, {
-            x: 1,
-            duration: 0.1,
-            repeat: 2,
-            yoyo: true,
-            ease: 'power2.inOut'
-        });
-
-        // If we're removing characters (like "Youssef " -> "")
-        if (fromChanging.length > toChanging.length) {
-            // Fade out the extra part
-            for (let i = fromChanging.length - 1; i >= toChanging.length; i--) {
-                await new Promise(resolve => setTimeout(resolve, 30));
-                const fadingPart = fromChanging.substring(0, i);
-                heroTitle.textContent = stablePart + fadingPart + toChanging;
-            }
-        }
-
-        // Glitch morph the changing part character by character
-        const maxLength = Math.max(fromChanging.length, toChanging.length);
-        for (let charIndex = 0; charIndex < toChanging.length; charIndex++) {
-            // Glitch iterations for this specific character
-            const iterations = 6;
-            for (let iter = 0; iter < iterations; iter++) {
-                await new Promise(resolve => setTimeout(resolve, 25));
-
-                let morphedChanging = '';
-                for (let j = 0; j < toChanging.length; j++) {
-                    if (j < charIndex) {
-                        // Already resolved
-                        morphedChanging += toChanging[j];
-                    } else if (j === charIndex) {
-                        // Currently glitching
-                        if (iter === iterations - 1) {
-                            // Final iteration - lock in correct character
-                            morphedChanging += toChanging[j];
-                        } else {
-                            // Random glitch character
-                            morphedChanging += glitchChars[Math.floor(Math.random() * glitchChars.length)];
-                        }
-                    } else if (j < fromChanging.length) {
-                        // Not yet processed - show original or glitch
-                        morphedChanging += fromChanging[j];
-                    } else {
-                        // New characters not yet glitched
-                        morphedChanging += ' ';
-                    }
-                }
-
-                heroTitle.textContent = (stablePart + morphedChanging).trim();
-            }
-        }
-
-        // Ensure final text is correct
-        heroTitle.textContent = toText;
-
-        // Reset position
-        gsap.to(heroTitle, {
-            x: 0,
-            duration: 0.2,
-            ease: 'power2.out',
+        activeTimeline = gsap.timeline({
             onComplete: () => {
+                heroTitle.textContent = nextTitle;
                 isAnimating = false;
             }
         });
+
+        activeTimeline
+            .to(heroTitle, {
+                x: 1,
+                duration: 0.08,
+                repeat: 2,
+                yoyo: true,
+                ease: 'power2.inOut'
+            }, 0)
+            .to(heroTitle, {
+                duration: 0.72,
+                ease: 'none',
+                onUpdate: function () {
+                    const revealed = Math.floor(this.progress() * length);
+                    heroTitle.textContent = Array.from(nextTitle, (character, index) => {
+                        if (index < revealed) return character;
+                        return glitchChars[Math.floor(Math.random() * glitchChars.length)];
+                    }).join('');
+                }
+            }, 0)
+            .to(heroTitle, {
+                opacity: 0.55,
+                duration: 0.12,
+                yoyo: true,
+                repeat: 1,
+                ease: 'power1.inOut'
+            }, 0.1)
+            .set(heroTitle, { x: 0, opacity: 1 });
     };
 
-    // Main animation loop
-    const animateTitle = async () => {
-        if (isAnimating) return;
+    startDelayId = window.setTimeout(() => {
+        animateTitle();
+        intervalId = window.setInterval(animateTitle, 5000);
+    }, 1800);
 
-        const currentText = titles[currentIndex];
-        currentIndex = (currentIndex + 1) % titles.length;
-        const nextText = titles[currentIndex];
-
-        await morphText(currentText, nextText);
+    return () => {
+        window.clearTimeout(startDelayId);
+        window.clearInterval(intervalId);
+        activeTimeline?.kill();
+        gsap.set(heroTitle, { x: 0, opacity: 1 });
+        heroTitle.textContent = titles[0];
     };
-
-    // Initial delay, then start morphing
-    setTimeout(() => {
-        setInterval(animateTitle, 5000);
-    }, 2000);
 }

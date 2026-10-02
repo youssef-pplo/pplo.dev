@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { initHeroTitleAnimation } from '../ui/heroTitleAnimation';
 
 const HeroSection: React.FC = () => {
+  useEffect(() => initHeroTitleAnimation(), []);
+
   return (
     <section id="hero" className="full-screen hero-section">
       <div className="hero-depth-field" aria-hidden="true">
