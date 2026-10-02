@@ -7,6 +7,7 @@
     --text-primary: #ffffff;
     --text-secondary: #a1a1aa;
     --accent-color: #ffffff;
+    --edge-accent: #72e4d8;
     --font-main: 'Inter', sans-serif;
 }
 
@@ -17,6 +18,7 @@
     --text-primary: #0a0a0a;
     --text-secondary: #52525b;
     --accent-color: #0a0a0a;
+    --edge-accent: #167f82;
 }
 
 * {
@@ -131,6 +133,7 @@ p {
     z-index: 100;
     border: 1px solid var(--border-color);
     border-radius: 9999px;
+    box-shadow: 0 0 0 1px color-mix(in srgb, var(--edge-accent) 12%, transparent);
     /* Pill shape */
 }
 
@@ -168,10 +171,19 @@ p {
     justify-content: center;
 }
 
+.hero-section {
+    position: relative;
+    overflow: hidden;
+    perspective: 1200px;
+    perspective-origin: 50% 45%;
+}
+
 .content-section {
     padding: 4rem 2rem;
     max-width: 1200px;
     margin: 0 auto;
+    perspective: 1100px;
+    transform-style: preserve-3d;
 }
 
 .glass-card {
@@ -190,10 +202,10 @@ p {
 
 .glass-card:hover {
     background: rgba(255, 255, 255, 0.05);
-    border-color: rgba(0, 243, 255, 0.2);
+    border-color: color-mix(in srgb, var(--edge-accent) 42%, var(--border-color));
     box-shadow:
         0 10px 40px rgba(0, 0, 0, 0.6),
-        inset 0 0 20px rgba(0, 243, 255, 0.05);
+        inset 0 0 20px color-mix(in srgb, var(--edge-accent) 8%, transparent);
 }
 
 /* Bento Grid System */
@@ -212,15 +224,175 @@ p {
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
+    isolation: isolate;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
+.bento-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    padding: 1px;
+    border-radius: inherit;
+    background: linear-gradient(135deg, color-mix(in srgb, var(--edge-accent) 72%, transparent), transparent 38%, transparent 68%, color-mix(in srgb, var(--edge-accent) 42%, transparent));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0.34;
+    pointer-events: none;
+    transition: opacity 0.35s ease;
+}
+
+.bento-card:hover::before,
+.bento-card:focus-within::before {
+    opacity: 0.92;
+}
+
+.bento-card > * {
+    position: relative;
+    z-index: 1;
+}
+
 .bento-card:hover {
-    border-color: #555;
+    border-color: color-mix(in srgb, var(--edge-accent) 40%, var(--border-color));
     transform: translateY(-2px);
-    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 24px color-mix(in srgb, var(--edge-accent) 10%, transparent);
+}
+
+.tech-orbit-wrap {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    align-items: center;
+    gap: 0.5rem;
+    margin: 1.25rem 0 2rem;
+    padding: 0.75rem 0.4rem 1rem;
+    border: 1px solid color-mix(in srgb, var(--edge-accent) 18%, var(--border-color));
+    border-radius: 14px;
+    background: radial-gradient(ellipse at 44% 50%, color-mix(in srgb, var(--edge-accent) 7%, transparent), transparent 60%), var(--surface-color);
+    box-shadow: inset 0 1px 0 color-mix(in srgb, var(--edge-accent) 18%, transparent);
+}
+
+.tech-orbit-stage {
+    position: relative;
+    min-width: 0;
+    width: 100%;
+    height: 255px;
+    touch-action: pan-y;
+    user-select: none;
+    cursor: grab;
+}
+
+.tech-orbit-stage.is-dragging {
+    cursor: grabbing;
+}
+
+.tech-orbit-canvas {
+    position: absolute;
+    inset: 0;
+    width: 100% !important;
+    height: 100% !important;
+    touch-action: pan-y;
+}
+
+.tech-orbit-chip {
+    min-height: 40px;
+    border: 1px solid color-mix(in srgb, var(--edge-accent) 35%, var(--border-color));
+    border-radius: 999px;
+    padding: 0.45rem 0.72rem;
+    color: var(--text-primary);
+    background: color-mix(in srgb, var(--surface-color) 94%, transparent);
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.28);
+    font: inherit;
+    font-size: 0.72rem;
+    white-space: nowrap;
+    cursor: pointer;
+    touch-action: manipulation;
+    transition: color 0.18s, border-color 0.18s, background 0.18s, box-shadow 0.18s;
+}
+
+.tech-orbit-chip:hover,
+.tech-orbit-chip:focus-visible,
+.tech-orbit-chip.is-selected {
+    color: var(--bg-color);
+    border-color: var(--edge-accent);
+    background: var(--edge-accent);
+    box-shadow: 0 0 18px color-mix(in srgb, var(--edge-accent) 34%, transparent);
+}
+
+.tech-orbit-chip:focus-visible {
+    outline: 2px solid var(--text-primary);
+    outline-offset: 2px;
+}
+
+.tech-orbit-hint {
+    position: absolute;
+    left: 50%;
+    bottom: 0.2rem;
+    color: var(--text-secondary);
+    font-size: 0.58rem;
+    letter-spacing: 0.16em;
+    opacity: 0.74;
+    transform: translateX(-50%);
+    pointer-events: none;
+}
+
+.tech-orbit-detail {
+    min-height: 72px;
+    margin: 0 0.8rem;
+    padding: 0.6rem 0 0 0.85rem;
+    border-left: 1px solid color-mix(in srgb, var(--edge-accent) 42%, var(--border-color));
+}
+
+.tech-orbit-detail > span {
+    display: block;
+    margin-bottom: 0.15rem;
+    color: var(--edge-accent);
+    font-size: 0.58rem;
+    letter-spacing: 0.2em;
+}
+
+.tech-orbit-detail strong {
+    font-size: 1.05rem;
+}
+
+.tech-orbit-detail p {
+    margin: 0.15rem 0 0;
+    font-size: 0.82rem;
+}
+
+@media (min-width: 769px) {
+    .tech-orbit-wrap {
+        grid-template-columns: minmax(0, 1.25fr) minmax(190px, 0.75fr);
+        gap: 1.5rem;
+        min-height: 340px;
+        margin: 1.5rem 0 2.5rem;
+        padding: 1rem 1.5rem;
+    }
+
+    .tech-orbit-stage {
+        height: 320px;
+    }
+
+    .tech-orbit-detail {
+        margin: 0;
+        padding: 0.5rem 0 0.5rem 1.25rem;
+    }
+
+    .tech-orbit-detail > span {
+        margin-bottom: 0.55rem;
+        font-size: 0.65rem;
+    }
+
+    .tech-orbit-detail strong {
+        font-size: 1.35rem;
+    }
+
+    .tech-orbit-detail p {
+        margin-top: 0.45rem;
+        font-size: 0.9rem;
+    }
 }
 
 /* Hero */
@@ -228,6 +400,70 @@ p {
     text-align: center;
     z-index: 1;
     max-width: 800px;
+    position: relative;
+    transform-style: preserve-3d;
+    will-change: transform;
+}
+
+.hero-label,
+#hero-title,
+.hero-content .subtitle,
+.hero-content .primary-btn {
+    transform-style: preserve-3d;
+    will-change: transform;
+}
+
+.hero-depth-field {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    pointer-events: none;
+    transform-style: preserve-3d;
+    will-change: transform, opacity;
+}
+
+.hero-depth-ring {
+    position: absolute;
+    width: min(68vw, 760px);
+    aspect-ratio: 1;
+    border: 1px solid color-mix(in srgb, var(--text-secondary) 20%, transparent);
+    border-radius: 50%;
+    transform-style: preserve-3d;
+}
+
+.hero-depth-ring--outer {
+    transform: rotateX(68deg) rotateZ(-18deg) translateZ(-80px);
+}
+
+.hero-depth-ring--inner {
+    width: min(48vw, 540px);
+    border-style: dashed;
+    border-color: color-mix(in srgb, var(--text-secondary) 13%, transparent);
+    transform: rotateX(68deg) rotateZ(26deg) translateZ(-30px);
+}
+
+.hero-depth-orb {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    top: 27%;
+    left: calc(50% + min(24vw, 280px));
+    border-radius: 50%;
+    background: var(--text-primary);
+    box-shadow: 0 0 24px color-mix(in srgb, var(--text-primary) 38%, transparent);
+    transform: translateZ(90px);
+}
+
+.hero-depth-caption {
+    position: absolute;
+    bottom: 2.25rem;
+    left: 50%;
+    color: var(--text-secondary);
+    font-size: 0.65rem;
+    letter-spacing: 0.22em;
+    opacity: 0.65;
+    transform: translateX(-50%) translateZ(-70px);
 }
 
 #hero-title {
@@ -501,4 +737,5 @@ p {
         width: 40px;
         height: 40px;
     }
+
 }
