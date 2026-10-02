@@ -10,7 +10,7 @@ const ContactSection: React.FC = () => {
           <a href="https://instagram.com/pplo.dev" target="_blank" rel="noopener noreferrer" className="contact-item">Instagram</a>
           <a href="https://wa.me/+201091734838" target="_blank" rel="noopener noreferrer" className="contact-item">WhatsApp</a>
         </div>
-        <p>&copy; 2016 - 2026 | Youssef Elsaid.</p>
+        <p>&copy; 2016 - 2027 | Youssef Elsaid.</p>
       </footer>
     </section>
   );

@@ -4,7 +4,7 @@ const AboutSection: React.FC = () => {
   return (
     <section id="about" className="content-section">
       <div className="bento-card profile-section">
-        <img src="https://s6.imgcdn.dev/YBxHLg.png" alt="Youssef Elsaid" className="profile-pic" />
+        <img src="https://i.ibb.co/nMb5sm5B/524413-1.jpg" alt="Youssef Elsaid" className="profile-pic" />
         <div>
           <h2>About Me</h2>
           <p className="about-text">

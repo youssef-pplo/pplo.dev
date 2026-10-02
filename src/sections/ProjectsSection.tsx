@@ -7,7 +7,7 @@ const ProjectsSection: React.FC = () => {
       <div className="bento-grid">
         <div className="bento-card">
           <div>
-            <h3 className="project-title">I3RBLY</h3>
+            <h3 className="project-title">I3rbly</h3>
             <p className="project-desc">AI system for Arabic grammatical analysis. 4 years of R&D.</p>
           </div>
           <a href="https://i3rbly.com" target="_blank" rel="noopener noreferrer" className="project-link">Visit Site →</a>
@@ -21,7 +21,7 @@ const ProjectsSection: React.FC = () => {
         </div>
         <div className="bento-card">
           <div>
-            <h3 className="project-title">AlCoders</h3>
+            <h3 className="project-title">Alcoders</h3>
             <p className="project-desc">Developer community and coding platform.</p>
           </div>
           <a href="https://alcoders.com" target="_blank" rel="noopener noreferrer" className="project-link">Visit Site →</a>
@@ -35,7 +35,7 @@ const ProjectsSection: React.FC = () => {
         </div>
         <div className="bento-card">
           <div>
-            <h3 className="project-title">PPLO GPT</h3>
+            <h3 className="project-title">PPLO-GPT</h3>
             <p className="project-desc">AI ChatBot using Python and ML to assist users.</p>
           </div>
           <a href="https://pplo.vercel.app" target="_blank" rel="noopener noreferrer" className="project-link">Visit Site →</a>
