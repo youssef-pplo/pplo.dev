@@ -7,7 +7,7 @@ const ProjectsSection: React.FC = () => {
       <div className="bento-grid">
         <div className="bento-card">
           <div>
-            <h3 className="project-title">I3rbly</h3>
+            <h3 className="project-title">A3rbly</h3>
             <p className="project-desc">AI system for Arabic grammatical analysis. 4 years of R&D.</p>
           </div>
           <a href="https://a3rbly.com" target="_blank" rel="noopener noreferrer" className="project-link">Visit Site →</a>
