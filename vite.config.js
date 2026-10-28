@@ -33,6 +33,28 @@ export default defineConfig({
   build: {
     outDir: 'dist',
     emptyOutDir: true,
+    chunkSizeWarningLimit: 600,
+    rollupOptions: {
+      output: {
+        manualChunks(id) {
+          if (id.includes('node_modules/three-stdlib') || id.includes('node_modules/@react-three/drei')) {
+            return 'three-drei';
+          }
+          if (id.includes('node_modules/three')) {
+            return 'three-core';
+          }
+          if (id.includes('node_modules/@react-three/fiber')) {
+            return 'three-fiber';
+          }
+          if (id.includes('node_modules/gsap')) {
+            return 'gsap-vendor';
+          }
+          if (id.includes('node_modules/react') || id.includes('node_modules/react-dom') || id.includes('node_modules/scheduler')) {
+            return 'react-vendor';
+          }
+        },
+      },
+    },
   },
   // Ensure we resolve .tsx and .ts files
   resolve: {

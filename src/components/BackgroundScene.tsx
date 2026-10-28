@@ -1,56 +1,51 @@
-import React, { useRef, useEffect, useMemo } from 'react';
+import React, { useRef, useEffect, useMemo, useState } from 'react';
 import { Canvas, useFrame, extend } from '@react-three/fiber';
 import * as THREE from 'three';
-import { shaderMaterial } from '@react-three/drei';
 
-// Define the shader material using drei's shaderMaterial helper
-const GradientShaderMaterial = shaderMaterial(
-  {
-    uTime: 0,
-    uColor1: new THREE.Color(0x111111),
-    uColor2: new THREE.Color(0x222222),
-    uMouse: new THREE.Vector2(0, 0),
-  },
-  // vertex shader
-  `
-    varying vec2 vUv;
-    uniform float uTime;
-    uniform vec2 uMouse;
-    
-    void main() {
-      vUv = uv;
-      vec3 pos = position;
-      
-      // Base wave
-      pos.z += sin(pos.x * 2.0 + uTime) * 0.5;
-      pos.z += cos(pos.y * 2.0 + uTime) * 0.5;
-      
-      // Mouse interaction (ripple/bulge)
-      float dist = distance(uv, uMouse);
-      float effect = smoothstep(0.5, 0.0, dist);
-      pos.z += effect * 2.0;
-      
-      gl_Position = projectionMatrix * modelViewMatrix * vec4(pos, 1.0);
-    }
-  `,
-  // fragment shader
-  `
-    varying vec2 vUv;
-    uniform vec3 uColor1;
-    uniform vec3 uColor2;
-    uniform vec2 uMouse;
-    
-    void main() {
-      float dist = distance(vUv, uMouse);
-      vec3 color = mix(uColor1, uColor2, vUv.y);
-      
-      // Highlight around mouse
-      color += vec3(0.1) * smoothstep(0.3, 0.0, dist);
-      
-      gl_FragColor = vec4(color, 0.5);
-    }
-  `
-);
+// Custom lightweight shader material without importing heavy drei helpers
+class GradientShaderMaterial extends THREE.ShaderMaterial {
+  constructor() {
+    super({
+      uniforms: {
+        uTime: { value: 0 },
+        uColor1: { value: new THREE.Color(0x111111) },
+        uColor2: { value: new THREE.Color(0x222222) },
+        uMouse: { value: new THREE.Vector2(0, 0) },
+      },
+      vertexShader: `
+        varying vec2 vUv;
+        uniform float uTime;
+        uniform vec2 uMouse;
+        
+        void main() {
+          vUv = uv;
+          vec3 pos = position;
+          pos.z += sin(pos.x * 2.0 + uTime) * 0.5;
+          pos.z += cos(pos.y * 2.0 + uTime) * 0.5;
+          float dist = distance(uv, uMouse);
+          float effect = smoothstep(0.5, 0.0, dist);
+          pos.z += effect * 2.0;
+          gl_Position = projectionMatrix * modelViewMatrix * vec4(pos, 1.0);
+        }
+      `,
+      fragmentShader: `
+        varying vec2 vUv;
+        uniform vec3 uColor1;
+        uniform vec3 uColor2;
+        uniform vec2 uMouse;
+        
+        void main() {
+          float dist = distance(vUv, uMouse);
+          vec3 color = mix(uColor1, uColor2, vUv.y);
+          color += vec3(0.1) * smoothstep(0.3, 0.0, dist);
+          gl_FragColor = vec4(color, 0.5);
+        }
+      `,
+      wireframe: true,
+      transparent: true,
+    });
+  }
+}
 
 extend({ GradientShaderMaterial });
 
@@ -68,33 +63,35 @@ function AnimatedMesh() {
   const mouse = useRef(new THREE.Vector2(0, 0));
 
   useFrame((state) => {
+    if (document.hidden) return;
     const elapsedTime = state.clock.getElapsedTime();
     if (materialRef.current) {
-      materialRef.current.uniforms.uTime.value = elapsedTime * 0.5;
-      // Smoothly interpolate mouse uniform
-      materialRef.current.uniforms.uMouse.value.lerp(mouse.current, 0.1);
+      materialRef.current.uniforms.uTime.value = elapsedTime * 0.4;
+      materialRef.current.uniforms.uMouse.value.lerp(mouse.current, 0.08);
     }
   });
 
   useEffect(() => {
+    let ticking = false;
     const handleMouseMove = (e: MouseEvent) => {
-      // Normalize mouse coordinates to 0..1
-      mouse.current.x = e.clientX / window.innerWidth;
-      mouse.current.y = 1.0 - (e.clientY / window.innerHeight);
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          mouse.current.x = e.clientX / window.innerWidth;
+          mouse.current.y = 1.0 - (e.clientY / window.innerHeight);
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
-    window.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener('mousemove', handleMouseMove, { passive: true });
     return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
 
   return (
     <mesh ref={meshRef} rotation={[-Math.PI / 3, 0, 0]}>
-      <planeGeometry args={[20, 20, 64, 64]} />
-      <gradientShaderMaterial
-        ref={materialRef}
-        wireframe
-        transparent
-        attach="material"
-      />
+      {/* 32x32 segments = 1,024 vertices (75% lighter than 64x64 = 4,096 vertices) */}
+      <planeGeometry args={[20, 20, 32, 32]} />
+      <gradientShaderMaterial ref={materialRef} attach="material" />
     </mesh>
   );
 }
@@ -103,8 +100,9 @@ function CursorParticles() {
   const materialRef = useRef<THREE.ShaderMaterial>(null);
   const mouse = useRef(new THREE.Vector2(0, 0));
   const positions = useMemo(() => {
-    const points = new Float32Array(360 * 3);
-    for (let index = 0; index < 360; index += 1) {
+    const count = 180; // Optimized count for smooth performance without main thread lag
+    const points = new Float32Array(count * 3);
+    for (let index = 0; index < count; index += 1) {
       const seed = index + 1;
       points[index * 3] = ((seed * 127.1) % 2000) / 100 - 10;
       points[index * 3 + 1] = ((seed * 311.7) % 1200) / 100 - 6;
@@ -114,21 +112,29 @@ function CursorParticles() {
   }, []);
 
   useEffect(() => {
+    let ticking = false;
     const updateMouse = (event: MouseEvent) => {
-      mouse.current.set(
-        (event.clientX / window.innerWidth) * 2 - 1,
-        1 - (event.clientY / window.innerHeight) * 2,
-      );
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          mouse.current.set(
+            (event.clientX / window.innerWidth) * 2 - 1,
+            1 - (event.clientY / window.innerHeight) * 2,
+          );
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
 
-    window.addEventListener('mousemove', updateMouse);
+    window.addEventListener('mousemove', updateMouse, { passive: true });
     return () => window.removeEventListener('mousemove', updateMouse);
   }, []);
 
   useFrame((state) => {
+    if (document.hidden) return;
     if (!materialRef.current) return;
     materialRef.current.uniforms.uTime.value = state.clock.elapsedTime;
-    materialRef.current.uniforms.uMouse.value.lerp(mouse.current, 0.1);
+    materialRef.current.uniforms.uMouse.value.lerp(mouse.current, 0.08);
   });
 
   return (
@@ -173,6 +179,29 @@ function CursorParticles() {
 }
 
 const BackgroundScene: React.FC = () => {
+  const [shouldRender, setShouldRender] = useState(false);
+
+  useEffect(() => {
+    // Respect reduced motion settings
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      return;
+    }
+
+    // Defer Canvas mounting until browser idle to prioritize FCP and LCP
+    if ('requestIdleCallback' in window) {
+      const handle = (window as any).requestIdleCallback(
+        () => setShouldRender(true),
+        { timeout: 1200 }
+      );
+      return () => (window as any).cancelIdleCallback(handle);
+    } else {
+      const timer = setTimeout(() => setShouldRender(true), 300);
+      return () => clearTimeout(timer);
+    }
+  }, []);
+
+  if (!shouldRender) return null;
+
   return (
     <Canvas
       id="bg-canvas"
@@ -184,8 +213,11 @@ const BackgroundScene: React.FC = () => {
         height: '100%',
         zIndex: -1,
         opacity: 0.5,
+        pointerEvents: 'none',
       }}
       camera={{ position: [0, 0, 5], fov: 75 }}
+      dpr={[1, 1.25]}
+      gl={{ alpha: true, antialias: false, powerPreference: 'low-power' }}
     >
       <CursorParticles />
       <AnimatedMesh />

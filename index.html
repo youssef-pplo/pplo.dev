@@ -63,8 +63,8 @@
   <meta name="format-detection" content="telephone=no" />
 
   <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/vite.svg" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon.svg" />
 
   <!-- Schema.org markup for Google, Answer Engines, and LLMs -->
   <script type="application/ld+json">
@@ -195,6 +195,17 @@
   <meta name="description" lang="ar"
     content="يوسف السيد - مهندس برمجيات ومعماري ذكاء اصطناعي. خبير في بايثون، التعلم الآلي، وتطوير الويب الشامل" />
 
+  <!-- Preconnect to Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <!-- Asynchronously load Google Fonts without blocking initial render -->
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" media="print" onload="this.media='all'" />
+  <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
+  </noscript>
+
   <link rel="stylesheet" href="./style.css">
 </head>
 
@@ -204,9 +215,9 @@
     <main id="app">
       <header class="hero-section">
         <span class="hero-label">Available for hire</span>
-        <h1 id="hero-title">Youssef Elsaid — Software Engineer &amp; AI Architect</h1>
+        <h1 id="hero-title">Youssef Elsaid</h1>
         <p class="subtitle">
-          Youssef Elsaid is an expert software engineer and AI architect from Alexandria, Egypt, specializing in Python, Machine Learning, Full-Stack Development, and real-time intelligent systems.
+          Youssef Elsaid — Software Engineer &amp; AI Architect.
         </p>
       </header>
 

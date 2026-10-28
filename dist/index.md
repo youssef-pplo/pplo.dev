@@ -12,9 +12,9 @@ Youssef Elsaid (pplo) — Software Engineer & AI Architect from Alexandria, Egyp
 
 Available for hire
 
-## Youssef Elsaid — Software Engineer & AI Architect
+## Youssef Elsaid
 
-Youssef Elsaid is an expert software engineer and AI architect from Alexandria, Egypt, specializing in Python, Machine Learning, Full-Stack Development, and real-time intelligent systems.
+Youssef Elsaid — Software Engineer & AI Architect.
 
 ## About Youssef Elsaid
 

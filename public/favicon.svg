@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <title>pplo. — Youssef Elsaid</title>
+  <desc>A precision-cut p and a signal dot on graphite.</desc>
+  <rect width="64" height="64" rx="14" fill="#080b0c"/>
+  <path d="M16 47V16h13c9 0 15 5 15 13s-6 13-15 13h-6v5h-7Zm7-12h6c5 0 8-2 8-6s-3-6-8-6h-6v12Z" fill="#f1f0e7"/>
+  <path d="M45 41h7v7h-7z" fill="#d3ff65"/>
+  <path d="M11 17v-6h6M47 53h6v-6" stroke="#d3ff65" stroke-opacity=".45"/>
+</svg>
