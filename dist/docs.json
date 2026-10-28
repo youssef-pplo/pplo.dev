@@ -1,0 +1,21 @@
+{
+  "version": "1.0",
+  "generated": "2026-10-28T08:28:20.953Z",
+  "site": {
+    "title": "Youssef Elsaid - Software Engineer & AI Architect | pplo.dev",
+    "description": "Youssef Elsaid (pplo) — Software Engineer & AI Architect from Alexandria, Egypt. 10+ years specializing in Python, Machine Learning, and scalable full-stack web applications.",
+    "url": "https://pplo.dev"
+  },
+  "documents": [
+    {
+      "url": "https://pplo.dev",
+      "title": "Youssef Elsaid - Software Engineer & AI Architect",
+      "description": "Youssef Elsaid (pplo) — Software Engineer & AI Architect from Alexandria, Egypt. 10+ years specializing in Python, Machine Learning, and scalable full-stack web applications."
+    }
+  ],
+  "metadata": {
+    "totalDocuments": 1,
+    "generator": "aeo.js",
+    "generatorUrl": "https://aeojs.org"
+  }
+}

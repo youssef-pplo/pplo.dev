@@ -1,82 +1,116 @@
 {
-  "$schema": "https://aeojs.org/schemas/ai-index.json",
   "version": "1.0",
-  "name": "Youssef Elsaid Portfolio & AI Architecture",
-  "url": "https://pplo.dev",
-  "description": "Portfolio and technical documentation for Youssef Elsaid, Software Engineer & AI Architect.",
-  "author": {
-    "name": "Youssef Elsaid",
-    "handle": "pplo",
-    "email": "youssefdev74@gmail.com",
-    "url": "https://pplo.dev",
-    "social": [
-      "https://github.com/youssef-pplo",
-      "https://instagram.com/pplo.dev"
-    ]
+  "generated": "2026-10-28T08:28:20.959Z",
+  "site": {
+    "title": "Youssef Elsaid - Software Engineer & AI Architect | pplo.dev",
+    "description": "Youssef Elsaid (pplo) — Software Engineer & AI Architect from Alexandria, Egypt. 10+ years specializing in Python, Machine Learning, and scalable full-stack web applications.",
+    "url": "https://pplo.dev"
   },
-  "endpoints": {
-    "llms": "https://pplo.dev/llms.txt",
-    "llmsFull": "https://pplo.dev/llms-full.txt",
-    "sitemap": "https://pplo.dev/sitemap.xml",
-    "robots": "https://pplo.dev/robots.txt"
-  },
-  "topics": [
-    "Artificial Intelligence",
-    "Machine Learning",
-    "Natural Language Processing",
-    "Arabic NLP",
-    "Full-Stack Web Development",
-    "Python",
-    "TypeScript",
-    "Three.js",
-    "FastAPI",
-    "React",
-    "Cloud Architecture"
-  ],
-  "statistics": {
-    "yearsOfExperience": 10,
-    "programmingLanguages": 30,
-    "rdYearsA3rbly": 4,
-    "productionUptime": "99.9%",
-    "monthlyRequests": "100,000+",
-    "completedProjects": 50
-  },
-  "projects": [
+  "entries": [
     {
-      "name": "A3rbly",
-      "url": "https://a3rbly.com",
-      "category": "AI / NLP",
-      "description": "AI system for Arabic grammatical analysis with 4 years of R&D."
+      "id": "72d9bd29aeaf1c4b",
+      "url": "https://pplo.dev",
+      "title": "Youssef Elsaid - Software Engineer & AI Architect (Part 1)",
+      "content": "Available for hire\n\n## Youssef Elsaid — Software Engineer & AI Architect\n\nYoussef Elsaid is an expert software engineer and AI architect from Alexandria, Egypt, specializing in Python, Machine Learning, Full-Stack Development, and real-time intelligent systems.\n\n## About Youssef Elsaid\n\nYoussef Elsaid, known professionally as pplo, is a software engineer and artificial intelligence architect based in Alexandria, Egypt. With over 10 years of programming experience since 2016, Youssef specializes in Python, machine learning, deep neural networks, and scalable full-stack web applications.\n\nYoussef began his computer science journey at age 8, developing foundational expertise across algorithms and systems engineering. Over the past decade, he has mastered more than 30 programming languages including Python, TypeScript, C++, Go, Rust, and SQL, building intelligent systems that solve real-world problems for clients globally.\n\nCombining cutting-edge artificial intelligence with cloud infrastructure, Youssef develops scalable platforms with 99.9% production uptime. His technical competencies span natural language processing, computer vision, distributed backend microservices, and interactive 3D WebGL experiences built with Three.js and modern JavaScript frameworks.\n\n## Key Engineering Highlights & Statistics\n\nOver a decade of continuous software engineering and artificial intelligence innovation has produced measurable real-world impact across diverse industry verticals:\n\n- **10+ Years Experience:** Active professional software development and system architecture since 2016.\n\n- **30+ Programming Languages:** Fluent mastery across systems, scripting, web, and data science languages.\n\n- **4+ Years R&D on A3rbly:** Architected Egypt's premier AI-powered Arabic syntax parsing engine.\n\n- **99.9% Production Uptime:** High reliability sustained across high-concurrency production deployments.",
+      "description": "Youssef Elsaid (pplo) — Software Engineer & AI Architect from Alexandria, Egypt. 10+ years specializing in Python, Machine Learning, and scalable full-stack web applications.",
+      "keywords": [
+        "youssef",
+        "elsaid",
+        "software",
+        "learning",
+        "development",
+        "with",
+        "years",
+        "platform",
+        "python",
+        "programming"
+      ],
+      "metadata": {
+        "chunkIndex": 0,
+        "totalChunks": 4,
+        "sourcePath": "/"
+      }
     },
     {
-      "name": "Steam1st Store",
-      "url": "https://steam1st.store",
-      "category": "E-Commerce / Backend",
-      "description": "Gaming top-up store built with Flask backend, PostgreSQL, and payment gateways."
+      "id": "9501050ebd4b3dfc",
+      "url": "https://pplo.dev",
+      "title": "Youssef Elsaid - Software Engineer & AI Architect (Part 3)",
+      "content": "Alcoders is a developer community platform and programming collaboration hub designed to mentor emerging software engineers, host coding challenges, and facilitate technical knowledge sharing across the MENA developer ecosystem.\n\n### EasyBio — E-Learning Platform\n\nEasyBio is an interactive educational platform engineered for secondary school biology students in Egypt. The platform delivers secure video lectures, automated testing systems, and student progress tracking for thousands of active learners.\n\n### PPLO-GPT — Conversational AI Assistant\n\nPPLO-GPT is an intelligent conversational assistant developed using Python, deep learning pipelines, and contextual language models to provide real-time assistance and problem-solving capabilities.\n\n### Kotobee — E-Learning Publishing Services\n\nContributed critical backend development and cloud API services for Kotobee, an internationally recognized interactive e-book authoring and digital publishing platform.\n\n## Frequently Asked Questions\n\n### Who is Youssef Elsaid?\n\nYoussef Elsaid, widely recognized online as pplo, is a software engineer and artificial intelligence architect based in Alexandria, Egypt. With over 10 years of programming experience since 2016, Youssef specializes in Python, machine learning, deep learning, Arabic NLP, and scalable full-stack web development.\n\n### What AI and software development services does Youssef Elsaid provide?\n\nYoussef provides bespoke AI model architecture, LLM agent integration, computer vision pipelines, high-throughput backend engineering, database optimization, and interactive 3D web application development using Three.js and WebGL.\n\n### What is A3rbly and how does it utilize AI?\n\nA3rbly is an AI-powered natural language processing system for automated Arabic grammatical syntax analysis (I'rab). Built by Youssef Elsaid following 4 years of dedicated research and development, it analyzes complex classical and modern Arabic sentences with high precision.",
+      "description": "Youssef Elsaid (pplo) — Software Engineer & AI Architect from Alexandria, Egypt. 10+ years specializing in Python, Machine Learning, and scalable full-stack web applications.",
+      "keywords": [
+        "youssef",
+        "elsaid",
+        "software",
+        "learning",
+        "development",
+        "with",
+        "years",
+        "platform",
+        "python",
+        "programming"
+      ],
+      "metadata": {
+        "chunkIndex": 2,
+        "totalChunks": 4,
+        "sourcePath": "/"
+      }
     },
     {
-      "name": "Alcoders",
-      "url": "https://alcoders.com",
-      "category": "Community / Education",
-      "description": "Developer community and coding collaboration platform."
+      "id": "b40e518d686e1a27",
+      "url": "https://pplo.dev",
+      "title": "Youssef Elsaid - Software Engineer & AI Architect (Part 2)",
+      "content": "- **100,000+ Monthly Requests:** High-throughput APIs reliably handled across e-commerce and edtech platforms.\n\n- **50+ Completed Solutions:** Production-grade applications deployed across web, mobile, and machine learning.\n\n## Technical Arsenal & Core Competencies\n\nYoussef builds robust, scalable digital architectures using modern industry-standard languages, deep learning frameworks, databases, and DevOps automation pipelines:\n\n- **Artificial Intelligence & Machine Learning:** PyTorch, TensorFlow, OpenCV, Scikit-learn, Hugging Face, LangChain, NumPy, Pandas, YOLO, Computer Vision, and Natural Language Processing.\n\n- **Backend Microservices & APIs:** Python (FastAPI, Flask, Django), Node.js, Express, PostgreSQL, Redis, MongoDB, GraphQL, and WebSockets.\n\n- **Modern Frontend & Spatial Web:** React, Next.js, TypeScript, Three.js, React Three Fiber, GSAP, WebGL, and Tailwind CSS.\n\n- **DevOps & Cloud Infrastructure:** Docker, Kubernetes, AWS, Google Cloud Platform, Linux System Administration, CI/CD, and Git.\n\n## Selected Engineering Projects\n\n### A3rbly — AI Arabic Syntax Analyzer\n\nA3rbly is an AI-powered natural language processing system for automated Arabic grammatical syntax analysis (I'rab). Built following 4 years of dedicated research and development, the platform utilizes custom machine learning models to analyze complex classical and modern Arabic texts with unprecedented accuracy.\n\n### Steam1st Store — High-Throughput Gaming E-Commerce\n\nSteam1st Store is a high-performance digital gaming top-up e-commerce platform. Architected with a Flask backend, PostgreSQL database, and Redis caching, the service reliably processes secure gaming transactions, serving thousands of active users with zero downtime.\n\n### Alcoders — Developer Collaboration Hub",
+      "description": "Youssef Elsaid (pplo) — Software Engineer & AI Architect from Alexandria, Egypt. 10+ years specializing in Python, Machine Learning, and scalable full-stack web applications.",
+      "keywords": [
+        "youssef",
+        "elsaid",
+        "software",
+        "learning",
+        "development",
+        "with",
+        "years",
+        "platform",
+        "python",
+        "programming"
+      ],
+      "metadata": {
+        "chunkIndex": 1,
+        "totalChunks": 4,
+        "sourcePath": "/"
+      }
     },
     {
-      "name": "EasyBio",
-      "url": "https://easybio-drabdelrahman.com",
-      "category": "EdTech",
-      "description": "Educational platform serving biology students in Egyptian secondary schools."
-    },
-    {
-      "name": "PPLO-GPT",
-      "url": "https://pplo.vercel.app",
-      "category": "AI / ChatBot",
-      "description": "Conversational AI assistant built with Python and machine learning."
-    },
-    {
-      "name": "Kotobee",
-      "url": "https://kotobee.com",
-      "category": "EdTech / Publishing",
-      "description": "Backend services and microservices for e-learning authoring platform."
+      "id": "fe381e8ff9992b26",
+      "url": "https://pplo.dev",
+      "title": "Youssef Elsaid - Software Engineer & AI Architect (Part 4)",
+      "content": "### How many years of programming experience does Youssef Elsaid have?\n\nYoussef Elsaid has over 10 years of hands-on software development experience. Having started coding at age 8, he has mastered more than 30 programming languages including Python, TypeScript, JavaScript, C++, Go, Rust, and SQL.\n\n### How can I contact or hire Youssef Elsaid for AI engineering?\n\nYou can hire or contact Youssef Elsaid directly via email at youssefdev74@gmail.com, through WhatsApp at +201091734838, or by connecting through his GitHub profile at github.com/youssef-pplo.",
+      "description": "Youssef Elsaid (pplo) — Software Engineer & AI Architect from Alexandria, Egypt. 10+ years specializing in Python, Machine Learning, and scalable full-stack web applications.",
+      "keywords": [
+        "youssef",
+        "elsaid",
+        "software",
+        "learning",
+        "development",
+        "with",
+        "years",
+        "platform",
+        "python",
+        "programming"
+      ],
+      "metadata": {
+        "chunkIndex": 3,
+        "totalChunks": 4,
+        "sourcePath": "/"
+      }
     }
-  ]
+  ],
+  "metadata": {
+    "totalEntries": 4,
+    "generator": "aeo.js",
+    "generatorUrl": "https://aeojs.org",
+    "embedding": {
+      "recommended": "text-embedding-ada-002",
+      "dimensions": 1536
+    }
+  }
 }

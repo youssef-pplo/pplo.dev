@@ -1,0 +1,79 @@
+{
+  "site": [
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Youssef Elsaid - Software Engineer & AI Architect | pplo.dev",
+      "description": "Youssef Elsaid (pplo) — Software Engineer & AI Architect from Alexandria, Egypt. 10+ years specializing in Python, Machine Learning, and scalable full-stack web applications.",
+      "url": "https://pplo.dev"
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Youssef Elsaid",
+      "url": "https://pplo.dev",
+      "logo": "https://s6.imgcdn.dev/YBxHLg.png",
+      "sameAs": [
+        "https://github.com/youssef-pplo",
+        "https://instagram.com/pplo.dev"
+      ]
+    }
+  ],
+  "pages": {
+    "/": [
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Who is Youssef Elsaid?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Youssef Elsaid, widely recognized online as pplo, is a software engineer and artificial intelligence architect based in Alexandria, Egypt. With over 10 years of programming experience since 2016, Youssef specializes in Python, machine learning, deep learning, Arabic NLP, and scalable full-stack web development."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What AI and software development services does Youssef Elsaid provide?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Youssef provides bespoke AI model architecture, LLM agent integration, computer vision pipelines, high-throughput backend engineering, database optimization, and interactive 3D web application development using Three.js and WebGL."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is A3rbly and how does it utilize AI?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A3rbly is an AI-powered natural language processing system for automated Arabic grammatical syntax analysis (I'rab). Built by Youssef Elsaid following 4 years of dedicated research and development, it analyzes complex classical and modern Arabic sentences with high precision."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How many years of programming experience does Youssef Elsaid have?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Youssef Elsaid has over 10 years of hands-on software development experience. Having started coding at age 8, he has mastered more than 30 programming languages including Python, TypeScript, JavaScript, C++, Go, Rust, and SQL."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How can I contact or hire Youssef Elsaid for AI engineering?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "You can hire or contact Youssef Elsaid directly via email at youssefdev74@gmail.com, through WhatsApp at +201091734838, or by connecting through his GitHub profile at github.com/youssef-pplo."
+            }
+          }
+        ]
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Youssef Elsaid - Software Engineer & AI Architect",
+        "url": "https://pplo.dev",
+        "description": "Youssef Elsaid (pplo) — Software Engineer & AI Architect from Alexandria, Egypt. 10+ years specializing in Python, Machine Learning, and scalable full-stack web applications."
+      }
+    ]
+  }
+}
