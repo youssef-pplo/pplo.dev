@@ -9,6 +9,7 @@ import HeroSection from './sections/HeroSection';
 import AboutSection from './sections/AboutSection';
 import TechStackSection from './sections/TechStackSection';
 import ProjectsSection from './sections/ProjectsSection';
+import FaqSection from './sections/FaqSection';
 import ContactSection from './sections/ContactSection';
 import { useScrollAnimations } from './hooks/useScrollAnimations';
 
@@ -27,6 +28,7 @@ const App: React.FC = () => {
         <AboutSection />
         <TechStackSection />
         <ProjectsSection />
+        <FaqSection />
         <ContactSection />
       </main>
     </>

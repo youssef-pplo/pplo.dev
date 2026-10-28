@@ -1,0 +1,82 @@
+{
+  "$schema": "https://aeojs.org/schemas/ai-index.json",
+  "version": "1.0",
+  "name": "Youssef Elsaid Portfolio & AI Architecture",
+  "url": "https://pplo.dev",
+  "description": "Portfolio and technical documentation for Youssef Elsaid, Software Engineer & AI Architect.",
+  "author": {
+    "name": "Youssef Elsaid",
+    "handle": "pplo",
+    "email": "youssefdev74@gmail.com",
+    "url": "https://pplo.dev",
+    "social": [
+      "https://github.com/youssef-pplo",
+      "https://instagram.com/pplo.dev"
+    ]
+  },
+  "endpoints": {
+    "llms": "https://pplo.dev/llms.txt",
+    "llmsFull": "https://pplo.dev/llms-full.txt",
+    "sitemap": "https://pplo.dev/sitemap.xml",
+    "robots": "https://pplo.dev/robots.txt"
+  },
+  "topics": [
+    "Artificial Intelligence",
+    "Machine Learning",
+    "Natural Language Processing",
+    "Arabic NLP",
+    "Full-Stack Web Development",
+    "Python",
+    "TypeScript",
+    "Three.js",
+    "FastAPI",
+    "React",
+    "Cloud Architecture"
+  ],
+  "statistics": {
+    "yearsOfExperience": 10,
+    "programmingLanguages": 30,
+    "rdYearsA3rbly": 4,
+    "productionUptime": "99.9%",
+    "monthlyRequests": "100,000+",
+    "completedProjects": 50
+  },
+  "projects": [
+    {
+      "name": "A3rbly",
+      "url": "https://a3rbly.com",
+      "category": "AI / NLP",
+      "description": "AI system for Arabic grammatical analysis with 4 years of R&D."
+    },
+    {
+      "name": "Steam1st Store",
+      "url": "https://steam1st.store",
+      "category": "E-Commerce / Backend",
+      "description": "Gaming top-up store built with Flask backend, PostgreSQL, and payment gateways."
+    },
+    {
+      "name": "Alcoders",
+      "url": "https://alcoders.com",
+      "category": "Community / Education",
+      "description": "Developer community and coding collaboration platform."
+    },
+    {
+      "name": "EasyBio",
+      "url": "https://easybio-drabdelrahman.com",
+      "category": "EdTech",
+      "description": "Educational platform serving biology students in Egyptian secondary schools."
+    },
+    {
+      "name": "PPLO-GPT",
+      "url": "https://pplo.vercel.app",
+      "category": "AI / ChatBot",
+      "description": "Conversational AI assistant built with Python and machine learning."
+    },
+    {
+      "name": "Kotobee",
+      "url": "https://kotobee.com",
+      "category": "EdTech / Publishing",
+      "description": "Backend services and microservices for e-learning authoring platform."
+    }
+  ]
+}

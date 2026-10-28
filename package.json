@@ -6,10 +6,14 @@
     "scripts": {
         "dev": "vite",
         "build": "vite build",
-        "preview": "vite preview"
+        "preview": "vite preview",
+        "aeo:check": "aeo.js check",
+        "aeo:generate": "aeo.js generate",
+        "aeo:report": "aeo.js report"
     },
     "devDependencies": {
         "@vitejs/plugin-react": "^5.1.2",
+        "aeo.js": "^0.0.14",
         "vite": "^5.4.21"
     },
     "dependencies": {

@@ -1,0 +1,46 @@
+# Youssef Elsaid — Software Engineer & AI Architect
+
+> Expert Software Engineer and AI Architect from Alexandria, Egypt, with 10+ years of coding experience since age 8. Specializing in Python, Machine Learning, Full-Stack Architecture, and real-time intelligent systems.
+
+## Summary & Core Identity
+Youssef Elsaid (widely known online as pplo) is a seasoned software engineer and artificial intelligence architect based in Alexandria, Egypt. With over 10 years of software engineering experience spanning more than 30 programming languages, he creates intelligent systems, machine learning architectures, and scalable full-stack applications.
+
+## Key Statistical Highlights
+- **10+ Years of Experience**: Building production software and AI models since 2016.
+- **30+ Programming Languages**: Fluency in Python, TypeScript, JavaScript, C++, Go, Rust, PHP, SQL, and Dart.
+- **4+ Years of R&D**: Dedicated to creating A3rbly, the premier AI engine for Arabic grammatical syntax parsing.
+- **100,000+ Monthly Requests**: Handled across client deployments with 99.9% measured uptime.
+- **50+ Completed Solutions**: Spanning edtech, gaming commerce, NLP models, and microservices.
+
+## Selected Projects & Inventions
+- [A3rbly](https://a3rbly.com): State-of-the-art AI system for automated Arabic grammatical analysis (I'rab) powered by customized NLP algorithms.
+- [Steam1st Store](https://steam1st.store): High-performance digital gaming storefront utilizing Flask, PostgreSQL, and secure payment processing.
+- [Alcoders](https://alcoders.com): Developer community platform and programming collaboration hub.
+- [EasyBio](https://easybio-drabdelrahman.com): Dedicated e-learning portal serving secondary school biology students in Egypt.
+- [PPLO-GPT](https://pplo.vercel.app): Conversational AI assistant utilizing Python, NLP pipelines, and machine learning models.
+- [Kotobee](https://kotobee.com): Core backend development and architecture for international digital publishing platform.
+
+## Technical Skills & Stack
+- **AI & Deep Learning**: PyTorch, TensorFlow, OpenCV, Scikit-learn, Hugging Face, LangChain, NumPy, Pandas, YOLO.
+- **Backend Architecture**: FastAPI, Flask, Django, Node.js, Express, PostgreSQL, Redis, MongoDB, GraphQL, WebSockets.
+- **Frontend & Spatial Web**: React, Next.js, TypeScript, Three.js, React Three Fiber, WebGL, GSAP, Tailwind CSS.
+- **Cloud & Infrastructure**: Docker, Kubernetes, AWS, Google Cloud Platform, Linux, CI/CD, Git.
+
+## Frequently Asked Questions
+
+### Who is Youssef Elsaid?
+Youssef Elsaid (pplo) is an Egyptian software engineer and AI architect based in Alexandria, Egypt. He specializes in machine learning, full-stack systems, and Arabic language processing.
+
+### What services does Youssef Elsaid provide?
+Youssef provides bespoke AI model architecture, LLM agent integration, computer vision pipelines, full-stack web application development, high-throughput backend engineering, and system performance optimization.
+
+### What is A3rbly?
+A3rbly is an AI-powered natural language processing platform developed by Youssef Elsaid after four years of intensive research and development, designed to parse and analyze complex Arabic grammatical structures.
+
+## Contact Information
+- Website: https://pplo.dev
+- Email: youssefdev74@gmail.com
+- GitHub: https://github.com/youssef-pplo
+- Instagram: https://instagram.com/pplo.dev
+- WhatsApp: +201091734838
+- Location: Alexandria, Egypt
