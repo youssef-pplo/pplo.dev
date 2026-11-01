@@ -37,19 +37,21 @@ export default defineConfig({
     rollupOptions: {
       output: {
         manualChunks(id) {
-          if (id.includes('node_modules/three-stdlib') || id.includes('node_modules/@react-three/drei')) {
-            return 'three-drei';
-          }
-          if (id.includes('node_modules/three')) {
-            return 'three-core';
-          }
-          if (id.includes('node_modules/@react-three/fiber')) {
-            return 'three-fiber';
+          if (
+            id.includes('node_modules/three') ||
+            id.includes('node_modules/@react-three') ||
+            id.includes('node_modules/three-stdlib')
+          ) {
+            return 'three-vendor';
           }
           if (id.includes('node_modules/gsap')) {
             return 'gsap-vendor';
           }
-          if (id.includes('node_modules/react') || id.includes('node_modules/react-dom') || id.includes('node_modules/scheduler')) {
+          if (
+            id.includes('node_modules/react') ||
+            id.includes('node_modules/react-dom') ||
+            id.includes('node_modules/scheduler')
+          ) {
             return 'react-vendor';
           }
         },
