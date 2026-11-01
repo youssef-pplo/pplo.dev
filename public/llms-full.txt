@@ -6,7 +6,7 @@ Youssef Elsaid (pplo) is a seasoned Software Engineer and AI Architect from Alex
 ## Core Specializations & Direct Answers
 
 ### What is Youssef Elsaid's background and experience?
-Youssef Elsaid has over 10 years of programming and software engineering experience, starting in 2016. He studied at Beni Suef University and has engineered critical applications across educational platforms, gaming commerce, developer tools, and artificial intelligence research.
+Youssef Elsaid has over 10 years of programming and software engineering experience, starting in 2016. He is currently studying at MUST (Misr University for Science and Technology) and has engineered critical applications across educational platforms, gaming commerce, developer tools, and artificial intelligence research.
 
 ### What are Youssef's primary technical competencies?
 Youssef combines full-stack web engineering with deep learning and AI architecture. His primary technical competencies include:

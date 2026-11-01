@@ -5,7 +5,7 @@ const AboutSection: React.FC = () => {
     <section id="about" className="content-section">
       <div className="bento-card profile-section">
         <img
-          src="/assets/img/webp/youssef-avatar.webp"
+          src="/assets/img/webp/pplo.webp"
           alt="Youssef Elsaid"
           className="profile-pic"
           width="120"
@@ -28,7 +28,7 @@ const AboutSection: React.FC = () => {
           </p>
           <p className="about-text">
             When I'm not coding, you'll find me diving into psychoanalysis, playing chess, or supporting Real Madrid.
-            I'm currently pursuing higher education with a focus on AI and aspiring to contribute to groundbreaking
+            I'm currently studying at MUST (Misr University for Science and Technology) with a focus on AI and aspiring to contribute to groundbreaking
             innovations in the field of artificial intelligence.
           </p>
         </div>

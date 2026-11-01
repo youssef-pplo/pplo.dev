@@ -29,7 +29,7 @@ Youssef Elsaid, known professionally as pplo, is a software engineer and artific
 
 Youssef began his computer science journey at age 8, developing foundational expertise across algorithms and systems engineering. Over the past decade, he has mastered more than 30 programming languages including Python, TypeScript, C++, Go, Rust, and SQL, building intelligent systems that solve real-world problems for clients globally.
 
-Combining cutting-edge artificial intelligence with cloud infrastructure, Youssef develops scalable platforms with 99.9% production uptime. His technical competencies span natural language processing, computer vision, distributed backend microservices, and interactive 3D WebGL experiences built with Three.js and modern JavaScript frameworks.
+Combining cutting-edge artificial intelligence with cloud infrastructure, Youssef develops scalable platforms with 99.9% production uptime. He is currently studying at MUST (Misr University for Science and Technology) with a focus on artificial intelligence, while developing natural language processing models, distributed backend microservices, and interactive 3D WebGL experiences.
 
 ## Key Engineering Highlights & Statistics
 

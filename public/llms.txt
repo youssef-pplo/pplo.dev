@@ -3,7 +3,7 @@
 > Expert Software Engineer and AI Architect from Alexandria, Egypt, with 10+ years of coding experience since age 8. Specializing in Python, Machine Learning, Full-Stack Architecture, and real-time intelligent systems.
 
 ## Summary & Core Identity
-Youssef Elsaid (widely known online as pplo) is a seasoned software engineer and artificial intelligence architect based in Alexandria, Egypt. With over 10 years of software engineering experience spanning more than 30 programming languages, he creates intelligent systems, machine learning architectures, and scalable full-stack applications.
+Youssef Elsaid (widely known online as pplo) is a seasoned software engineer and artificial intelligence architect based in Alexandria, Egypt. Currently studying at MUST (Misr University for Science and Technology), with over 10 years of software engineering experience spanning more than 30 programming languages, he creates intelligent systems, machine learning architectures, and scalable full-stack applications.
 
 ## Key Statistical Highlights
 - **10+ Years of Experience**: Building production software and AI models since 2016.
